@@ -1,0 +1,108 @@
+<!--
+Ali Helal
+Professor Deek
+IT 202
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+	<title>Patron Login Information</title>
+
+	<style type="text/css">
+	   input[type=text], select, textarea {
+	     width: 50%;
+	     padding: 12px;
+	     border: 1px solid #ccc;
+	     border-radius: 4px;
+	     resize: vertical;
+	 }
+
+	 input[type=email], select, textarea {
+	     width: 50%;
+	     padding: 12px;
+	     border: 1px solid #ccc;
+	     border-radius: 4px;
+	     resize: vertical;
+	 }
+
+	 input[type=password], select, textarea {
+	     width: 50%;
+	     padding: 12px;
+	     border: 1px solid #ccc;
+	     border-radius: 4px;
+	     resize: vertical;
+	 }
+
+	 label {
+	     padding: 12px 12px 12px 0;
+	     display: inline-block;
+	 }
+	</style>
+</head>
+<body>
+	<form action="checkPatron.php">
+		<script type="text/javascript">
+
+		  function validate() {
+		  const form = document.getElementById("patronForm");
+		  const patronName = document.getElementById("patronName");
+		  const patronId = document.getElementById("patronCardNumber");
+
+		  let message = "";
+
+		  if (!patronName.value) {
+		    message += "Name field should not be empty\n";
+		  }
+
+		  if (!patronCardNumber.value) {
+		    message += "Patron card number field should not be empty\n";
+		  }
+
+		  if (patronId.value.length !== 8) {
+		    message += "Card number field should be 8 digits long\n";
+		  }
+
+		  if (message) {
+		    alert("Validation failed:\n" + message);
+		  } else if (verify() == '0') {
+		    alert("Verification successful:\nUser valid");
+		  } else {
+		    alert("Verification failed:\nUser invalid");
+		    exit();
+		  }
+		}
+
+		  function verify() {
+		  const found = "<? php echo $found ?>"
+
+		  if (found == '0'){
+		      window.location.href = "https://web.njit.edu/~ah366/Assignment4/chooseFunction.html";
+		  }
+
+		  return found
+		}
+		</script>
+		<div class="container">
+			<h1>Verifying and Validating Information</h1>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label" for="PatronName">Enter a Patron Name:</label>
+				<div class="col-sm-10">
+					<input class="form-control" id="PatronName" placeholder="Enter name:" required="" type="text">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label" for="PatronCardNumber">Enter a Patron Card Number:</label>
+				<div class="col-sm-10">
+					<input class="form-control" id="PatronCardNumber" maxlength="8" pattern="\d*" placeholder="Password" required="" type="password">
+				</div>
+			</div>
+			<div class="text-center">
+				<button class="btn btn-primary btn-lg" onclick="validate();verify()" type="submit">Continue</button>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

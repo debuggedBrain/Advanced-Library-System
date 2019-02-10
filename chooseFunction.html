@@ -1,0 +1,98 @@
+<!--
+Ali Helal
+Professor Deek
+IT 202
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  
+  <title>Library User Interface</title>
+
+  <style type="text/css">
+     input[type=text], select, textarea {
+       width: 50%;
+       padding: 12px;
+       border: 1px solid #ccc;
+       border-radius: 4px;
+       resize: vertical;
+   }
+
+   input[type=email], select, textarea {
+       width: 50%;
+       padding: 12px;
+       border: 1px solid #ccc;
+       border-radius: 4px;
+       resize: vertical;
+   }
+
+   input[type=password], select, textarea {
+       width: 50%;
+       padding: 12px;
+       border: 1px solid #ccc;
+       border-radius: 4px;
+       resize: vertical;
+   }
+
+   label {
+       padding: 12px 12px 12px 0;
+       display: inline-block;
+   }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Library User Interface: Your options</h1>
+    <form action="doFunction.php" id="patronForm" name="patronForm">
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="newPatronName">Enter a Patron Name (REQUIRED Only if creating a new account):</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="newPatronName" placeholder="Enter name:" type="text">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="newPatronCardNumber">Enter a Patron Card Number (REQUIRED Only if creating a new account):</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="newPatronCardNumber" maxlength="8" pattern="\d*" placeholder="Password" type="password">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="patronEmail">Enter a Patron Email (REQUIRED only if creating a new account):</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="patronEmail" placeholder="Enter email" type="email">
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" for="bookName">Enter a book name (REQUIRED only if returning or searching for a book):</label>
+          <div class="col-sm-10">
+            <input class="form-control" id="bookName" placeholder="Enter book name" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="patronTransaction">Select a transaction</label> <select class="custom-select" id="patronTransaction">
+            <option selected>
+              Select one:
+            </option>
+            <option value="view">
+              View Records
+            </option>
+            <option value="search">
+              Search for Book
+            </option>
+            <option value="return">
+              Return a Book
+            </option>
+            <option value="create">
+              Create an Account
+            </option>
+          </select>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-primary btn-lg" type="submit">Continue</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
